@@ -1,0 +1,344 @@
+
+/*IMPORTACIÓN DE FUENTE*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/*RESET GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*ESTILO GLOBAL*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/*HEADER / NAVEGACIÓN PRINCIPAL*/
+header {
+    background: #000000;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e10600;
+    position: sticky; /* HEADER FIJO */
+    top: 0;
+    z-index: 600;
+}
+
+header h1 {
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #e10600;
+}
+
+/* =======================
+   SECCIONES GENERALES
+   ======================= */
+section {
+    padding: 80px 10%;
+}
+
+/* Fondo alternado tipo tienda */
+section:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+/* TITULOS GENERALES */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-left: 5px solid #e10600;
+    padding-left: 15px;
+}
+
+/*INICIO / HERO PRINCIPAL*/
+.hero {
+    height: 90vh;
+    background: url("img/guante1.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6); /* Capa de sombra sobre la imagen */
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN ESTILO ECOMMERCE */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #e10600;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #b50000;
+    transform: scale(1.05);
+}
+
+/*PORTFOLIO ESTILO TIENDA*/
+.portfolio-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.card {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* SECCIÓN VIDEO PORTFOLIO */
+.video-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.video-section h2 {
+    margin-bottom: 30px;
+}
+
+.video-section video {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* CARRUSEL / SLIDES */
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    height: 65vh; 
+    max-height: 600px; 
+    background: #000;
+    overflow: hidden;
+}
+
+ul.slider {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+ul.slider li img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    background: #1a1a1a;
+    display: block;
+}
+
+ul.slider li:target { 
+    opacity: 1; 
+}
+
+/* Navegación de Carrusel */
+.slider-nav {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-carrusel img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.carrusel {
+    margin-top: 30px;
+}
+
+/* Movimiento de slides por input */
+#slide1:checked ~ .slides { margin-left: 0; }
+#slide2:checked ~ .slides { margin-left: -100%; }
+#slide3:checked ~ .slides { margin-left: -200%; }
+
+/* Botones circulares */
+.navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation label {
+    width: 15px;
+    height: 15px;
+    background: #888;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navigation label:hover {
+    background: #e10600;
+}
+
+/*CONTACTO / FORMULARIO*/
+form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+form input,
+form select {
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 25px;
+    padding: 12px;
+    background: #e10600;
+    color: white;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #b50000;
+}
+
+/* MAPA */
+iframe {
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+/*FOOTER*/
+footer {
+    background: #000;
+    text-align: center;
+    padding: 40px;
+    border-top: 2px solid #e10600;
+}
+
+/*MEDIA QUERIES*/
+
+/* Tablet */
+@media (max-width: 1000px) {
+    .portfolio-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide img {
+        height: 350px;
+    }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .slide img {
+        height: 250px;
+    }
+}
