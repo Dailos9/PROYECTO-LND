@@ -1,0 +1,1 @@
+En este caso, presento un proyecto basado en la creación de una página web aleatoria utilizando Visual Studio Code (VSC). Mi sitio está enfocado en una tienda online de artículos deportivos, específicamente en la venta de guantes de portero y otros utensilios para la práctica diaria del fútbol
